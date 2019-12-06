@@ -14,6 +14,10 @@ body{
    line-height: normal;
 }
 
+.navbar-expand-lg{
+   padding-left: 0px;
+}
+
 /*
 ___________________________________
 
@@ -78,6 +82,10 @@ ___________________________________
 2- Image background 
 ___________________________________
 */
+
+.bg-home{
+   background-image: url(../img/main-pic.jpg);
+}
 
 
 .wowzers-area {
@@ -177,6 +185,12 @@ ___________________________________
    .wowzers-area .wowzers-content-preview h2{
       font-size: 50px;
    }
+
+   .bg-home{
+      background-image: url(../img/main-mobile-min.png);
+      background-position: center, center;
+      background-size: contain;
+   }
 }
 
 @media only screen and (min-width: 575px) {
@@ -246,7 +260,6 @@ ___________________________________
 .jarallax > .jarallax-img {
    position: absolute;
    object-fit: cover;
-   font-family: 'object-fit: cover';
    top: 0;
    left: 0;
    width: 100%;
