@@ -1,3 +1,4 @@
+
 <?php
 		if($_POST["name"]==""||$_POST["last_name"]==""||$_POST["email"]==""||$_POST["sex"]==""||$_POST["date"]==""){
 
@@ -24,13 +25,18 @@
 			else{
 				$subject = 'Nuevo registro Wowzer';
 				$message = 'Hola Wowzer! '. $name . ' ' . $last_name . ' con el correo electrónico ' . $email . ', nacido en ' . $date . ' y de sexo <b>' .  $sex . '</b> desea inscribirse a tu lista de MailChimp';
-				$headers = 'From:'. 'wowzers.store@gmail.com' . "rn"; // Sender's Email
+				$headers  = 'MIME-Version: 1.0' . "\r\n";
+				$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+
+				$headers = 'From:'. 'wowzers.store@gmail.com' ."\r\n".
+							'Reply-To: '.$from."\r\n" .
+							'X-Mailer: PHP/' . phpversion(); // Sender's Email
 				//$headers .= 'Cc:'. $email2 . "rn"; // Carbon copy to Sender
 				// Message lines should not exceed 70 characters (PHP rule), so wrap it
-				$message = wordwrap($message, 70);
+				$message = wordwrap($message, 150);
 				// Send Mail By PHP Mail Function
 				mail("brayanangarita11@gmail.com", $subject, $message, $headers);
-				echo "Your mail has been sent successfuly ! Thank you for your feedback";
+				echo "Gracias, ahora eres parte de nuestra lista";
 			}
 		}
 	
