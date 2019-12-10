@@ -17,22 +17,23 @@
 		}
 		else{
 			$subject = 'Nuevo registro Wowzer';
-			$headers  = 'MIME-Version: 1.0' . "\r\n";
-			$headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
 
 			$headers = 'From:'. 'wowzers.store@gmail.com' ."\r\n".
 						'Reply-To: '.$email."\r\n" .
 						'X-Mailer: PHP/' . phpversion(); // Sender's Email
+
+			$headers .= "MIME-Version: 1.0\r\n";
+			$headers .= "Content-Type: text/html; charset=UTF-8\r\n";
+
+			
 			//$headers .= 'Cc:'. $email2 . "rn"; // Carbon copy to Sender
 
-			$message = '<html><body>';
-			$message .= 'Hola Wowzer! '. $name . ' ' . $last_name . ' con el correo electrónico ' . $email . ', nacido en ' . $date . ' y de sexo <b>' .  $sex . '</b> desea inscribirse a tu lista de MailChimp';
-
-			$message .= '</body></html>';
+			$message = 'Hola Wowzer! '. $name . ' ' . $last_name . ' con el correo electrónico ' . $email . ', nacido en ' . $date . ' y de sexo <b>' .  $sex . '</b> desea inscribirse a tu lista de MailChimp';
 
 			// Send Mail By PHP Mail Function
 			mail("brayanangarita11@gmail.com", $subject, $message, $headers);
-			echo "Gracias, ahora eres parte de nuestra lista";
+			header('Location: wow');
+			//echo "Gracias, ahora eres parte de nuestra lista";
 		}
 	}
 ?>
