@@ -39,7 +39,7 @@
 
 		    //$url = 'https://us4' . '.api.mailchimp.com/3.0/lists/' . $listId . '/members/' . $memberId;
 
-		    var_dump($url);
+		    //var_dump($url);
 
 
             $data = array(
@@ -71,21 +71,7 @@
 
             $result = curl_exec($ch);
 
-            var_dump($result);
-            //die('Mailchimp executed jiji');
-
-
-
-
-
-
-
-
-
-
-
-
-
+            //var_dump($result);
 
 
 
@@ -162,7 +148,7 @@
 
 			// Send Mail By PHP Mail Function
 			//mail("brayanangarita11@gmail.com", $subject, $message, $headers);
-			//header('Location: wow');
+			header('Location: wow.php');
 			//echo "Gracias, ahora eres parte de nuestra lista";
 		}
 	}
